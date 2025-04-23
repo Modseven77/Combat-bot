@@ -2,7 +2,6 @@ const { SlashCommandBuilder } = require('discord.js');
 const fs = require('fs');
 const path = require('path');
 
-// Rutas a los archivos JSON en la carpeta /data
 const PERSONAJES_FILE = path.join(__dirname, '../data/personajes.json');
 const ESTADO_BATALLA_FILE = path.join(__dirname, '../data/estado_batalla.json');
 
@@ -58,32 +57,30 @@ module.exports = {
       return interaction.reply('⚠️ Error al leer los personajes.');
     }
 
-    // Buscar personaje (ignora mayúsculas/minúsculas)
-    const personajeExistente = personajes.find(p => p.nombre.toLowerCase() === nombre.toLowerCase());
+    const personaje = personajes.find(p => p.nombre.toLowerCase() === nombre.toLowerCase());
 
-    if (!personajeExistente) {
+    if (!personaje) {
       return interaction.reply(`❌ No se encontró un personaje con el nombre "${nombre}".`);
     }
 
     // Mostrar valores actuales
-    let mensaje = `🔎 Personaje encontrado:\n`;
-    mensaje += `Nombre: ${personajeExistente.nombre}\n`;
-    mensaje += `Especie: ${personajeExistente.especie}\n`;
-    mensaje += `Ataque: ${personajeExistente.ataque}\n`;
-    mensaje += `Defensa: ${personajeExistente.defensa}\n`;
-    mensaje += `Vida: ${personajeExistente.vida}\n`;
+    let mensaje = `📜 Información actual del personaje:\n` +
+      `🔹 Nombre: ${personaje.nombre}\n` +
+      `🔹 Especie: ${personaje.especie}\n` +
+      `🗡️ Ataque: ${personaje.ataque}\n` +
+      `🛡️ Defensa: ${personaje.defensa}\n` +
+      `❤️ Vida: ${personaje.vida}\n`;
 
-    // Aplicar cambios
     let cambiosRealizados = false;
 
     if (nuevaEspecie) {
-      personajeExistente.especie = nuevaEspecie;
+      personaje.especie = nuevaEspecie;
       cambiosRealizados = true;
     }
 
     if (nuevoAtaque !== null) {
       if (nuevoAtaque > 0) {
-        personajeExistente.ataque = nuevoAtaque;
+        personaje.ataque = nuevoAtaque;
         cambiosRealizados = true;
       } else {
         return interaction.reply('❌ El valor de ataque debe ser un número entero positivo.');
@@ -92,7 +89,7 @@ module.exports = {
 
     if (nuevaDefensa !== null) {
       if (nuevaDefensa > 0) {
-        personajeExistente.defensa = nuevaDefensa;
+        personaje.defensa = nuevaDefensa;
         cambiosRealizados = true;
       } else {
         return interaction.reply('❌ El valor de defensa debe ser un número entero positivo.');
@@ -101,7 +98,7 @@ module.exports = {
 
     if (nuevaVida !== null) {
       if (nuevaVida > 0) {
-        personajeExistente.vida = nuevaVida;
+        personaje.vida = nuevaVida;
         cambiosRealizados = true;
       } else {
         return interaction.reply('❌ El valor de vida debe ser un número entero positivo.');
@@ -121,11 +118,12 @@ module.exports = {
     }
 
     // Confirmar cambios
-    mensaje += `\n✅ Personaje editado con éxito. Nuevos valores:\n`;
-    mensaje += `Especie: ${personajeExistente.especie}\n`;
-    mensaje += `Ataque: ${personajeExistente.ataque}\n`;
-    mensaje += `Defensa: ${personajeExistente.defensa}\n`;
-    mensaje += `Vida: ${personajeExistente.vida}`;
+    mensaje += `\n✅ Personaje editado con éxito. Nuevos valores:\n` +
+      `🔹 Nombre: ${personaje.nombre}\n` +
+      `🔹 Especie: ${personaje.especie}\n` +
+      `🗡️ Ataque: ${personaje.ataque}\n` +
+      `🛡️ Defensa: ${personaje.defensa}\n` +
+      `❤️ Vida: ${personaje.vida}`;
 
     return interaction.reply(mensaje);
   }
