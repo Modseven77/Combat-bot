@@ -1,0 +1,118 @@
+[
+  {
+    "nombre": "Miguel",
+    "especie": "hado",
+    "ataqueBase": 654,
+    "defensaBase": 778,
+    "vidaBase": 876,
+    "ataques": {
+      "basico": {
+        "nombre": "Ataque Básico",
+        "pp": 10,
+        "daño": 50
+      },
+      "cargado": {
+        "nombre": "Ataque Cargado",
+        "pp": 5,
+        "daño": 75
+      },
+      "especial": {
+        "nombre": "Ataque Especial",
+        "pp": 3,
+        "daño": 90
+      },
+      "ultimate": {
+        "nombre": "Ataque Ultimate",
+        "pp": 1,
+        "daño": 150
+      }
+    }
+  },
+  {
+    "nombre": "Orome",
+    "especie": "Valar",
+    "ataqueBase": 1000,
+    "defensaBase": 1000,
+    "vidaBase": 2000,
+    "ataques": {
+      "basico": {
+        "nombre": "Lobo",
+        "pp": 10,
+        "daño": 50
+      },
+      "cargado": {
+        "nombre": "Doble colmillo",
+        "pp": 5,
+        "daño": 75
+      },
+      "especial": {
+        "nombre": "Fuerza lunar",
+        "pp": 3,
+        "daño": 90
+      },
+      "ultimate": {
+        "nombre": "Ataque Ultimate",
+        "pp": 1,
+        "daño": 150
+      }
+    }
+  },
+  {
+    "nombre": "Tulkas",
+    "especie": "Señor OSCURO",
+    "ataqueBase": 1000,
+    "defensaBase": 1000,
+    "vidaBase": 1000,
+    "ataques": {
+      "basico": {
+        "nombre": "Ataque Básico",
+        "pp": 10,
+        "daño": 50
+      },
+      "cargado": {
+        "nombre": "torromoto",
+        "pp": 5,
+        "daño": 75
+      },
+      "especial": {
+        "nombre": "Ataque Especial",
+        "pp": 3,
+        "daño": 90
+      },
+      "ultimate": {
+        "nombre": "Ataque Ultimate",
+        "pp": 1,
+        "daño": 150
+      }
+    }
+  },
+  {
+    "nombre": "Elentari",
+    "especie": "Valar",
+    "ataqueBase": 1090,
+    "defensaBase": 876,
+    "vidaBase": 2000,
+    "ataques": {
+      "basico": {
+        "nombre": "Ataque Básico",
+        "pp": 10,
+        "daño": 50
+      },
+      "cargado": {
+        "nombre": "Ataque Cargado",
+        "pp": 5,
+        "daño": 75
+      },
+      "especial": {
+        "nombre": "Ataque Especial",
+        "pp": 3,
+        "daño": 90
+      },
+      "ultimate": {
+        "nombre": "Ataque Ultimate",
+        "pp": 1,
+        "daño": 150
+      }
+    }
+  }
+]
